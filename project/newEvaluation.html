@@ -1,472 +1,484 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <title>New Evaluations</title>
 
-  <link rel="stylesheet" href="style.css">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  
+  <link rel="stylesheet" type="text/css" href="assets/normalize.css" />
+  <link rel="stylesheet/less" type="text/css" href="assets/common.less" />
+  <link rel="stylesheet/less" type="text/css" href="assets/new-evaluation.less" />
+
+  <script src="assets/less.min.js" type="text/javascript"></script>
+
 </head>
 
 <body>
 
   <header>
-    <img src="assets/logo-v2.png" alt="Softvision Logo" style="display: inline-block; width: 10em; height: 2.5em; margin-left: 5em;">
-    <nav style="margin-left: 20em; display:inline-block;">
-      <a style="font-size: x-large; color: #696969; text-decoration: none;" href="">Evaluations</a>
-      <a style="font-size: x-large; color:	#696969; text-decoration: none; margin-left: 0.3em;" href="">New Evaluation</a>
+    <img src="assets/images/logo-v2.png" alt="Softvision Logo" class="eval-sv-logo">
+    <nav class="eval-header-nav">
+      <a href="" class="eval-header-links eval-header-links-skin">Evaluations</a>
+      <a href="" class="eval-header-links eval-header-links-skin">New Evaluation</a>
     </nav>
-    <a style="margin-left: 40em; display: inline-block; font-size: x-large; color: #696969; text-decoration: none;" href="">Log out</a>
+    <a class="eval-header-logout-button eval-header-logout-button-skin" href="">Log out</a>
+    <hr class="eval-header-buttom">
   </header>
 
-  <hr>
+    <div class="new-eval">
 
-  <form class="center">
+      <form>
 
-      <section>
-        <input type="text" placeholder="Candidate">
-        <input type="text" placeholder="Interviewer">
-        <input type="date" style="border: none">
-      </section>
+          <section>
+                <input type="text" placeholder="Candidate" name="candidate">
+                <input type="text" placeholder="Interviewer" name="interviewer">
+                <input type="date" name="date">
+          </section>
 
-      <section>
-        <h2>Technical Level</h2>
-        <table>
-          <tr>
-            <th>Trainee</th>
-            <th>Junior</th>
-            <th>Middle</th>
-            <th>Senior</th>
-          </tr>
-          <tr class="border-lists">
-            <td><input type="radio" id="T"/></td>
-            <td>
-              <input type="radio" id="J1"/>
-              <input type="radio" id="J2"/>
-              <input type="radio" id="J3"/>
-            </td>
-            <td>
-              <input type="radio" id="M1"/>
-              <input type="radio" id="M2"/>
-              <input type="radio" id="M3"/>
-            </td>
-            <td>
-              <input type="radio" id="S1"/>
-              <input type="radio" id="S2"/>
-              <input type="radio" id="S3"/>
-            </td>
-          </tr>
-        </table>
-      </section>
+          <section>
+                <h2 class="h2-skin">Technical Level</h2>
+                <table>
+                  <tr>
+                    <th>Trainee</th>
+                    <th>Junior</th>
+                    <th>Middle</th>
+                    <th>Senior</th>
+                  </tr>
+                  <tr class="border-lists-skin">
+                    <td>
+                      <input type="radio" id="T"/>
+                    </td>
+                    <td>
+                      <input type="radio" id="J1"/>
+                      <input type="radio" id="J2"/>
+                      <input type="radio" id="J3"/>
+                    </td>
+                    <td>
+                      <input type="radio" id="M1"/>
+                      <input type="radio" id="M2"/>
+                      <input type="radio" id="M3"/>
+                    </td>
+                    <td>
+                      <input type="radio" id="S1"/>
+                      <input type="radio" id="S2"/>
+                      <input type="radio" id="S3"/>
+                    </td>
+                  </tr>
+                </table>
+          </section>
 
 
-      <section>
-        <h2>Should the candidate be hired?</h2>
-        <textarea rows="6" placeholder="The type of project that is suitable for the candidate
-Is guidance required for the candidate" reqired></textarea>
-      </section>
+          <section>
+                <h2 class="h2-skin">Should the candidate be hired?</h2>
+                <textarea rows="6" placeholder="The type of project that is suitable for the candidate
+Is guidance required for the candidate"></textarea>
+          </section>
 
-      <section>
-        <h2>General Impression</h2>
-        <textarea rows="6" required placeholder="*required" impressions"></textarea>
-      </section>
+          <section>
+            <h2  class="h2-skin">General Impression</h2>
+            <textarea rows="6" required placeholder="*required"></textarea>
+          </section>
 
-      <section>
-        <h2>Workflow, Leadership & Soft Skills</h2>
-        <textarea rows="6" required placeholder="Describe the environment in which the candidate works.
-    Describe any guidance or management experience" workflow"></textarea>
-      </section>
+          <section>
+            <h2 class="h2-skin">Workflow, Leadership &amp; Soft Skills</h2>
+            <textarea rows="6" required placeholder="Describe the environment in which the candidate works.
+Describe any guidance or management experience"></textarea>
+          </section>
 
-      <fieldset>
-        <legend>OOP, Design Patterns</legend>
-        <ul>
-          <li>
-            <label for="classes">Classes</label>
-            <select name="classes" id="classes">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-            <label for="exception">Exception Handling</label>
-            <select name="exception" id="exception">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-            <label for="vcs">Version Control</label>
-            <select name="vcs" id="vcs">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-          </li>
-          <li>
-            <label for="access">Access Modifiers</label>
-            <select name="access" id="access">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-            <label for="patterns">Design Patterns</label>
-            <select name="patterns" id="patterns">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-            <label for="issue">Issue Tracking</label>
-            <select name="issue" id="issue">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-          </li>
-          <li>
-            <label for="poly">Polymorphism</label>
-            <select name="poly" id="poly">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-            <label for="regex">RegEx</label>
-            <select name="regex" id ="regex">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-          </li>
-        </ul>
-      </fieldset>
+          <fieldset>
+            <legend>OOP, Design Patterns</legend>
+            <ul>
+              <li>
+                <label for="classes">Classes</label>
+                <select name="classes" id="classes">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+                <label for="exception">Exception Handling</label>
+                <select name="exception" id="exception">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+                <label for="vcs">Version Control</label>
+                <select name="vcs" id="vcs">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </li>
+              <li>
+                <label for="access">Access Modifiers</label>
+                <select name="access" id="access">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+                <label for="patterns">Design Patterns</label>
+                <select name="patterns" id="patterns">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+                <label for="issue">Issue Tracking</label>
+                <select name="issue" id="issue">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </li>
+              <li>
+                <label for="poly">Polymorphism</label>
+                <select name="poly" id="poly">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+                <label for="regex">RegEx</label>
+                <select name="regex" id ="regex">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </li>
+            </ul>
+          </fieldset>
 
-      <fieldset>
-        <legend>HTTP</legend>
-        <ul>
-          <li>
-              <label for="protocol">Protocol</label>
-              <select name="protocol" id="protocol">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            <label for="codes">Response codes</label>
-              <select name="codes" id="codes">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            <label for="rest">REST</label>
-              <select name="rest" id="rest">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-          </li>
-          <li>
-            <label for="headers">Headers</label>
-              <select name="headers" id="headers">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            <label for="request">Request Methods</label>
-              <select name="request" id="request">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            <label for="session">Sessions and Cookies</label>
-              <select name="sessions" id="session">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-          </li>
-      </fieldset>
-
-      <fieldset>
-        <legend>HTML</legend>
-        <ul>
-          <li>
-              <label for="doctype">Doctype</label>
-                  <select name="doctype" id="doctype">
+          <fieldset>
+            <legend>HTTP</legend>
+            <ul>
+              <li>
+                  <label for="protocol">Protocol</label>
+                  <select name="protocol" id="protocol">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                   </select>
-              <label for="tags">Tags</label>
-                  <select name="tags" id="tags">
+                <label for="codes">Response codes</label>
+                  <select name="codes" id="codes">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                   </select>
-              <label for="seo">Basic SEO</label>
-                  <select name="seo" id="seo">
+                <label for="rest">REST</label>
+                  <select name="rest" id="rest">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                   </select>
-            </li>
-            <li>
-                <label for="syntax">Syntax Rules</label>
-                  <select name="syntax" id="syntax">
+              </li>
+              <li>
+                <label for="headers">Headers</label>
+                  <select name="headers" id="headers">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                   </select>
-               <label for="attr">Attributes</label>
-                  <select name="attr" id="attr">
+                <label for="request">Request Methods</label>
+                  <select name="request" id="request">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                   </select>
-           </li>
-        </ul>
-      </fieldset>
+                <label for="session">Sessions and Cookies</label>
+                  <select name="sessions" id="session">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+              </li>
+            </ul>
+          </fieldset>
 
-      <fieldset>
-        <legend>CSS</legend>
-        <ul>
-          <li>
-              <label for="usage">Usage</label>
-              <select name="usage" id="usage">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-              <label for="modeling">Box modeling</label>
-              <select name="modeling" id="modeling">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-              <label for="css3">CSS 3.0</label>
-              <select name="css3" id="css3">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </li>
+          <fieldset>
+            <legend>HTML</legend>
+            <ul>
+              <li>
+                  <label for="doctype">Doctype</label>
+                      <select name="doctype" id="doctype">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                  <label for="tags">Tags</label>
+                      <select name="tags" id="tags">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                  <label for="seo">Basic SEO</label>
+                      <select name="seo" id="seo">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                </li>
                 <li>
-                  <label for="sel">Selectors</label>
-                  <select name="sel" id="sel">
+                    <label for="syntax">Syntax Rules</label>
+                      <select name="syntax" id="syntax">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                   <label for="attr">Attributes</label>
+                      <select name="attr" id="attr">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+               </li>
+            </ul>
+          </fieldset>
+
+          <fieldset>
+            <legend>CSS</legend>
+            <ul>
+              <li>
+                  <label for="usage">Usage</label>
+                  <select name="usage" id="usage">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                   </select>
-                  <label for="style">Styling</label>
-                  <select name="style" id="style">
+                  <label for="modeling">Box modeling</label>
+                  <select name="modeling" id="modeling">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                   </select>
-                  <label for="dynamic">Dynamic Stylesheets</label>
-                  <select name="dynamic" id="dynamic">
+                  <label for="css3">CSS 3.0</label>
+                  <select name="css3" id="css3">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                   </select>
                 </li>
-          </ul>
-      </fieldset>
+                    <li>
+                      <label for="sel">Selectors</label>
+                      <select name="sel" id="sel">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                      <label for="style">Styling</label>
+                      <select name="style" id="style">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                      <label for="dynamic">Dynamic Stylesheets</label>
+                      <select name="dynamic" id="dynamic">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                    </li>
+              </ul>
+          </fieldset>
 
-      <fieldset>
-        <legend>Javascript</legend>
-        <ul>
-          <li>
-              <label for="data">Data types and variables</label>
-                <select name="data" id="data">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select>
-              <label for="object">Object manipulation</label>
-                <select name="object" id="object">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select>
-              <label for="dom">DOM manipulation</label>
-                <select name="dom" id="dom">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select>
-            </li>
-            <li>
-              <label for="funct">Functions</label>
-                <select name="funct" id="funct">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select>
-              <label for="temp">Templating</label>
-                <select name="temp" id="temp">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select>
-              <label for="eventh">Event Handling</label>
-              <select name="eventh" id="eventh">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                </select>
-            </li>
-            <li>
-              <label for="prot">Prototype & OOP</label>
-              <select name="prot" id="prot">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-              <label for="test">Testing (Unit & E2E)</label>
-              <select name="test" id="test">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-              <label for="ajax">AJAX</label>
-              <select name="ajax" id="ajax">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </li>
-            <li>
-              <label for="debug">Debugging</label>
-              <select name="debug" id="debug">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-              <label for="webs">Websockets</label>
-              <select name="webs" id="webs">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-              <label for="tool">Tooling</label>
-              <select name="tool" id="tool">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </li>
-            <li>
-              <label for="lib">Libraries</label>
-              <select name="lib" id="lib">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-              <label for="prom">Promises</label>
-              <select name="prom" id="prom">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-              <label for="brow">Browser Engines</label>
-              <select name="brow" id="brow">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </li>
-            <li>
-              <label for="frame">Frameworks</label>
-              <select name="frame" id="brow">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </li>
-        </ul>
-      </fieldset>
+          <fieldset>
+            <legend>Javascript</legend>
+            <ul>
+              <li>
+                  <label for="data">Data types and variables</label>
+                    <select name="data" id="data">
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                    </select>
+                  <label for="object">Object manipulation</label>
+                    <select name="object" id="object">
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                    </select>
+                  <label for="dom">DOM manipulation</label>
+                    <select name="dom" id="dom">
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                    </select>
+                </li>
+                <li>
+                  <label for="funct">Functions</label>
+                    <select name="funct" id="funct">
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                    </select>
+                  <label for="temp">Templating</label>
+                    <select name="temp" id="temp">
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                    </select>
+                  <label for="eventh">Event Handling</label>
+                  <select name="eventh" id="eventh">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    </select>
+                </li>
+                <li>
+                  <label for="prot">Prototype &amp; OOP</label>
+                  <select name="prot" id="prot">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                  <label for="test">Testing (Unit &amp; E2E)</label>
+                  <select name="test" id="test">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                  <label for="ajax">AJAX</label>
+                  <select name="ajax" id="ajax">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </li>
+                <li>
+                  <label for="debug">Debugging</label>
+                  <select name="debug" id="debug">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                  <label for="webs">Websockets</label>
+                  <select name="webs" id="webs">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                  <label for="tool">Tooling</label>
+                  <select name="tool" id="tool">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </li>
+                <li>
+                  <label for="lib">Libraries</label>
+                  <select name="lib" id="lib">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                  <label for="prom">Promises</label>
+                  <select name="prom" id="prom">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                  <label for="brow">Browser Engines</label>
+                  <select name="brow" id="brow">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </li>
+                <li>
+                  <label for="frame">Frameworks</label>
+                  <select name="frame" id="frame">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </li>
+            </ul>
+          </fieldset>
 
 
-      <fieldset>
-        <legend>NodeJS</legend>
-        <ul>
-          <li>
-              <label for="back">Backend Frameworks</label>
-              <select name="back" id="back">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-              <label for="templ">Templating</label>
-              <select name="templ" id="templ">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-              <label for="domm">DOM manipulation</label>
-              <select name="domm" id="domm">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </li>
-            <li>
-              <label for="unit">Unit Testing</label>
-              <select name="unit" id="unit">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </li>
-          </ul>
-      </fieldset>
-      <input type="submit" value="SUBMIT">
-    </form>
+          <fieldset>
+            <legend>NodeJS</legend>
+            <ul>
+              <li>
+                  <label for="back">Backend Frameworks</label>
+                  <select name="back" id="back">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                  <label for="templ">Templating</label>
+                  <select name="templ" id="templ">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                  <label for="domm">DOM manipulation</label>
+                  <select name="domm" id="domm">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </li>
+                <li>
+                  <label for="unit">Unit Testing</label>
+                  <select name="unit" id="unit">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </li>
+              </ul>
+          </fieldset>
+        <button class="new-eval-button new-eval-button-skin">SUBMIT</button>
+        </form>
+    </div>
 
-    <footer>
-      <p style="text-align: right ; margin-top: 2%; margin-right: 5%;">
-        Copyright@Softvision 2017
-      </p>
+    <footer class="footer-skin col-3">
+          <p>Copyright@Softvision 2017</p>
     </footer>
+
 
 </body>
 </html>
