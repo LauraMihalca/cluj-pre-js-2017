@@ -1,9 +1,11 @@
+@import (less) "colors.less";
+
 .body-structure {
     width: 100%;
 }
 
 .body-skin {
-    background-color: rgb(230, 230, 230);
+    background-color: @grey-1;
 }
 
 header {
@@ -17,12 +19,12 @@ header {
     }
 }
 
-.login-section-1 {
-    padding: 70px;
+.login-common-skin {
+    background-color: @white;
 }
 
-.login-section-1-skin {
-    background-color: rgb(255, 255, 255);
+.login-section-1 {
+    padding: 70px;
 }
 
 .login-section-text {
@@ -41,19 +43,13 @@ header {
     height: 65%;
 }
 
-.login-form-skin {
-    background-color: rgb(255, 255, 255);
-}
-
 .login-form-items {
     padding: 25px 25px 5px;
 }
 
 .login-form-header-skin {
-    background-color: rgb(51, 153, 255);
-    color: rgb(255, 255, 255);
-    font-family: roboto;
-    font-weight: bold;
+    background-color: @blue;
+    color: @white;
 }
 
 .login-form-header-text {
@@ -62,19 +58,19 @@ header {
     text-align: center;
 }
 
-input[type=text],
-input[type=password] {
+.login-form-items-input {
     width: 100%;
-    border: none;
-    border-bottom: 1px solid rgb(166, 166, 166);
-    font-family: roboto;
-    font-size: 20px;
     padding-bottom: 10px;
     padding-top: 10px;
 }
 
+.login-form-items-input-skin {
+    border: none;
+    border-bottom: 1px solid @grey-2;
+}
+
 .login-form-button {
-    box-shadow: 10px 35px -9px rgba(204, 194, 204, 1);
+    box-shadow: 10px 35px -9px @grey-2;
     line-height: 30px;
     width: 25%;
     margin-top: 42%;
@@ -82,9 +78,7 @@ input[type=password] {
 }
 
 .login-form-button-skin {
-    background-color: rgb(51, 153, 255);
-    color: rgb(255, 255, 255);
+    background-color: @blue;
+    color: @white;
     border: none;
-    font-family: roboto;
-    font-size: 20px;
 }
