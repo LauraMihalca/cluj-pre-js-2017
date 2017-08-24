@@ -1,4 +1,4 @@
-const NAV = function() {
+const NAV = function(options={}) {
     return `
     <header>
         <img src="assets/images/logo-v2.png" alt="Softvision Logo" class="eval-sv-logo">
