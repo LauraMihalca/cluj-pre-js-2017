@@ -1,21 +1,6 @@
-const LoginPage = function() {
-    return `
-        ${LoginHeader()}
-        ${LoginSubmitFeedbackSection()}
-        ${LoginSeeResultsSection()}
-        ${Footer()}
-    `
-}
 
-const LoginHeader = function() {
-    return `
-        <header>
-            ${LoginForm()}
-        </header>
-    `;
-}
 
-const LoginForm = function() {
+const LoginForm = function () {
     return `
     <div class="grid">
     <div class="login-form login-common-skin">
@@ -32,9 +17,17 @@ const LoginForm = function() {
         </div>
 </div>
 `;
-}
+};
 
-const LoginSubmitFeedbackSection = function() {
+const LoginHeader = function () {
+    return `
+        <header>
+            ${LoginForm()}
+        </header>
+    `;
+};
+
+const LoginSubmitFeedbackSection = function () {
     return `
         <section>
             <div class="grid login-section-1 login-common-skin">
@@ -56,10 +49,9 @@ const LoginSubmitFeedbackSection = function() {
         </div>
     </section>
     `;
+};
 
-}
-
-const LoginSeeResultsSection = function() {
+const LoginSeeResultsSection = function () {
     return `
     <section>
     <div class="grid login-section-2">
@@ -82,12 +74,20 @@ const LoginSeeResultsSection = function() {
     </div>
 </section>
     `;
-    
-}
+};
+
+const LoginPage = function () {
+    return `
+        ${LoginHeader()}
+        ${LoginSubmitFeedbackSection()}
+        ${LoginSeeResultsSection()}
+        ${Footer()}
+    `;
+};
 
 const loginHTML = LoginPage();
-window.onload = function() {
+window.onload = function () {
     const mainContent = document.querySelector('#content');
     mainContent.innerHTML = loginHTML;
-}
+};
 

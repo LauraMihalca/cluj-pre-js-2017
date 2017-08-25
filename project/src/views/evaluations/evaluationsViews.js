@@ -1,50 +1,13 @@
-const EvaluationsPage = function(options = {}) {
-    const rows = [{
-        name: "Popescu Adrian",
-        technology: "Javascript",
-        level: "Mid2"
-    },
-    {
-        name: "Popescu Adrian",
-        technology: "Javascript",
-        level: "Mid2"
-    },
-    {
-        name: "Popescu Adrian",
-        technology: "Javascript",
-        level: "Mid2"
-    },
-    {
-        name: "Popescu Adrian",
-        technology: "Javascript",
-        level: "Mid2"
-    }];
-    const headings = ['Nume', 'Tehnologie', 'Nivel', ''];
-    return `
-        ${NAV()}
-        ${EvaluationsTable({
-            itemsHeadings: headings,
-            items: rows
-        })}
-        ${Footer()}
-    `;
-}
-
-const EvaluationsTableHeader = function(options){
-    const headings = [];
-    options.headings.forEach(function(el) {
-        const generatedEl = ` <th>${el}</th>`;
-        headings.push(generatedEl);
-    });
-    const headingsEl = headings.join('');
+const EvaluationsTableHeader = function (options) {
+    const headings = options.headings.map(el => `<th>${el}</th>`);
     return `
     <tr>
-       ${headingsEl}
+       ${headings.join('')}
     </tr>
     `;
-}
+};
 
-const EvaluationsTableRow = function(options = {}) {
+const EvaluationsTableRow = function (options = {}) {
     return `
     <tr>
         <td>${options.name}</td>
@@ -53,39 +16,41 @@ const EvaluationsTableRow = function(options = {}) {
         <td><a href="">Detalii</a></td>
     </tr>
     `;
-}
+};
 
-const EvaluationsTableBody = function(options = {}){
-    const rowsElements = options.items.map(function(rowObj){
-        return EvaluationsTableRow(rowObj);
-    });
-    const rowsEl = rowsElements.join('');
-    return `
-        ${rowsEl}
-    `;
-}
+const EvaluationsTableBody = function (options = {}) {
+    const rowsElements = options.items.map(rowObj => EvaluationsTableRow(rowObj));
+    return `${rowsElements.join('')}`;
+};
 
-const EvaluationsTable = function(options = {}) {
+const EvaluationsTable = function (options = {}) {
     return `
-            <div class="eval-section">
+        <div class="eval-section">
             <section>
-                    <table class="eval-section-table">
-                        ${EvaluationsTableHeader({
-                            headings: options.itemsHeadings
-                        })}
-                        ${EvaluationsTableBody({
-                            items: options.items
-                        })}                    
+                <table class="eval-section-table">
+                    ${EvaluationsTableHeader({ headings: options.headings })}
+                    ${EvaluationsTableBody({ items: options.items })}                    
                 </table>
             </section>
         </div>    
     `;
-}
+};
+
+const EvaluationsPage = function (options = {}) {
+    return `
+        ${NAV()}
+        ${EvaluationsTable({
+        headings: getHeadings(),
+        items: getRows(),
+    })}
+        ${Footer()}
+    `;
+};
 
 
 const evaluationsHTML = EvaluationsPage();
-window.onload = function() {
+window.onload = function () {
     const mainContent = document.querySelector('#content');
     mainContent.innerHTML = evaluationsHTML;
-}
+};
 
