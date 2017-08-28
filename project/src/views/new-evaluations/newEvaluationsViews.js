@@ -112,9 +112,3 @@ const NewEvaluationsPage = function () {
       
   `;
 };
-
-const newEvaluationsHTML = NewEvaluationsPage();
-window.onload = function () {
-    const mainContent = document.querySelector('#content');
-    mainContent.innerHTML = newEvaluationsHTML;
-};

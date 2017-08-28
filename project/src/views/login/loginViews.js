@@ -1,5 +1,4 @@
 
-
 const LoginForm = function () {
     return `
     <div class="grid">
@@ -9,8 +8,8 @@ const LoginForm = function () {
                 <h3 class="login-form-header-text">Interview Feedback</h3>
               </div>
               <div class="login-form-items default-font">
-                  <input class="login-form-items-input login-form-items-input-skin" type="text" placeholder="Username" name="username">
-                  <input class="login-form-items-input login-form-items-input-skin" type="password" placeholder="Password" name="password">
+                  <input class="login-form-items-input login-form-items-input-skin username" type="text" placeholder="Username" name="username">
+                  <input class="login-form-items-input login-form-items-input-skin password" type="password" placeholder="Password" name="password" >
                   <input class="login-form-button login-form-button-skin default-font" type="submit" value="Login">
               </div>
           </form>
@@ -21,7 +20,7 @@ const LoginForm = function () {
 
 const LoginHeader = function () {
     return `
-        <header>
+        <header class="login-header">
             ${LoginForm()}
         </header>
     `;
@@ -85,9 +84,4 @@ const LoginPage = function () {
     `;
 };
 
-const loginHTML = LoginPage();
-window.onload = function () {
-    const mainContent = document.querySelector('#content');
-    mainContent.innerHTML = loginHTML;
-};
 

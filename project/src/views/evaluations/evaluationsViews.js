@@ -47,10 +47,3 @@ const EvaluationsPage = function (options = {}) {
     `;
 };
 
-
-const evaluationsHTML = EvaluationsPage();
-window.onload = function () {
-    const mainContent = document.querySelector('#content');
-    mainContent.innerHTML = evaluationsHTML;
-};
-

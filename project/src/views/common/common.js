@@ -3,10 +3,10 @@ const NAV = function (options = {}) {
     <header>
         <img src="assets/images/logo-v2.png" alt="Softvision Logo" class="eval-sv-logo">
         <nav class="eval-header-nav">
-        <a href="" class="eval-header-links eval-header-links-skin default-font">Evaluations</a>
-        <a href="" class="eval-header-links eval-header-links-skin default-font">New Evaluation</a>
+        <a class="eval-header-links eval-header-links-skin default-font evaluations">Evaluations</a>
+        <a class="eval-header-links eval-header-links-skin default-font new-evaluation">New Evaluation</a>
         </nav>
-        <a class="eval-header-logout-button eval-header-logout-button-skin default-font" href="">Log out</a>
+        <a class="eval-header-logout-button eval-header-logout-button-skin default-font">Log out</a>
         <hr class="eval-header-bottom eval-header-bottom-skin">
     </header>
   `;
