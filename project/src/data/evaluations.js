@@ -1,4 +1,4 @@
-const getRows = function(){
+const getRows = function() {
     return [{
         name: "Popescu Adrian",
         technology: "Javascript",
@@ -21,6 +21,6 @@ const getRows = function(){
     }];
 }
 
-getHeadings = function(){
+getHeadings = function() {
     return ['Nume', 'Tehnologie', 'Nivel', ''];
 }

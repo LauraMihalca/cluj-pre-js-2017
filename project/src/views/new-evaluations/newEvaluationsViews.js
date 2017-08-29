@@ -1,9 +1,9 @@
 const CandidateDetailsForm = function () {
     return `
     <section> 
-        <input type="text" placeholder="Candidate" name="candidate">
-        <input type="text" placeholder="Interviewer" name="interviewer">
-        <input type="date" name="date">
+        <input type="text" id="candidate" placeholder="Candidate" name="candidate">
+        <input type="text" id="interviewer" placeholder="Interviewer" name="interviewer">
+        <input type="date" id="date" name="date">
     </section>
     `;
 };
@@ -23,7 +23,7 @@ const TechnicalLevelPickerHeaders = function (options = {}) {
 
 const TechnicalLevelPickerColumns = function (options = {}) {
     const inputs = options.map((inp) => {
-        const partialInputs = inp.inputLevels.map(lev => `<input type="radio" id="${lev}" name="level"/>`);
+        const partialInputs = inp.inputLevels.map(lev => `<input type="radio" id="${lev}" name="level" value="${lev}"/>`);
         return `<td>${partialInputs.join('')}</td>`;
     });
     return inputs;
@@ -50,7 +50,7 @@ const Textarea = function (options = {}) {
     return `
     <section>
         <h2 class="title-skin">${options.title}</h2>
-        <textarea rows="6" placeholder="${options.placeholder}"></textarea>
+        <textarea rows="6" id="${constructId(options.title)}" placeholder="${options.placeholder}"></textarea>
     </section>`;
 };
 
@@ -60,15 +60,16 @@ const TextareaSection = function (options = {}) {
 };
 
 
-const DropDownSelector = function (options = {}) {
+const DropDownSelector = function (options = {}, legend = '') {
     const finalArr = options.map((el) => {
         const dropDownOptions = el.options.map(op => `<option value="${op}">${op}</option>`);
-        const name = el.label.split(' ').join('_');
+        const name = constructIdFieldset(legend, el.label);
         return `
-            <label for="${name}" class="default-label default-label-skin default-font-label">${el.label}</label>
-            <select name="${name}" id="${name}">
-                ${dropDownOptions.join('')}
-            </select>`;
+        <label for="${name}" class="default-label default-label-skin default-font-label">${el.label}</label>
+        <select name="${name}" id="${name}">
+            ${dropDownOptions.join('')}
+        </select>
+        `;
     });
     return finalArr.join('');
 };
@@ -80,35 +81,35 @@ const Li = function (options = {}) {
 
 
 const Fieldset = function (options = {}) {
-    const selectArray = options.dropDownOptions.map(el => `<li>${DropDownSelector(el)}</li>`);
-    return `<fieldset>
-    <legend>${options.legend}</legend>
-    <ul>
-      ${selectArray.join('')}      
-    </ul>
-  </fieldset>`;
+    const selectArray = options.dropDownOptions.map(el => `<li>${DropDownSelector(el, options.legend)}</li>`);
+    return `
+    <fieldset>
+        <legend>${options.legend}</legend>
+        <ul>
+            ${selectArray.join('')}      
+        </ul>
+    </fieldset>`;
 };
 
 const TechnicalAreaPicker = function (options = {}) {
     const fieldsetArray = options.map(el => Fieldset(el));
     return `
-        ${fieldsetArray.join('')}    
-        <button class="new-eval-button new-eval-button-skin default-font">SUBMIT</button>
+    ${fieldsetArray.join('')}    
     `;
 };
 
 const NewEvaluationsPage = function () {
     return `
-      ${NAV()}
-      <div class="new-eval">
-          <form>
-              ${CandidateDetailsForm()}
-              ${TechnicalLevelPicker(getTechnicalLevelArray())}
-              ${TextareaSection(getTextareaArray())}
-              ${TechnicalAreaPicker(getTechnicalAreaArray())}
-          </form>
-      </div>
-      ${Footer()}
-      
-  `;
+    ${NAV()}
+    <div class="new-eval">
+        <form id="new_eval_form" onsubmit="getFormData()">
+            ${CandidateDetailsForm()}
+            ${TechnicalLevelPicker(getTechnicalLevelArray())}
+            ${TextareaSection(getTextareaArray())}
+            ${TechnicalAreaPicker(getTechnicalAreaArray())}
+            <input class="new-eval-button new-eval-button-skin default-font" type="submit" value="SUBMIT"/>
+        </form>
+    </div>
+    ${Footer()}
+    `;
 };

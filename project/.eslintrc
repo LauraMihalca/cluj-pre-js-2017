@@ -9,7 +9,8 @@
       "indent": ["error", 4],
       "func-names": 0,
       "no-use-before-define": 0,
-      "arrow-parens": 0
+      "arrow-parens": 0,
+      "no-alert": 0
     },
     "env": {
       "browser": true

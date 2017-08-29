@@ -10,7 +10,7 @@ function getTextareaArray() {
                 placeholder: '*required',
             },
             {
-                title: 'Workflow, Leadership &amp; Soft Skills',
+                title: 'Workflow, Leadership & Soft Skills',
                 placeholder: 'Describe the environment in which the candidate works. Describe any guidance or management experience',
             },
         ],
@@ -106,7 +106,7 @@ function getTechnicalAreaArray() {
                 options: optionsItems,
             },
             {
-                label: 'Sessions &amp; Cookies',
+                label: 'Sessions & Cookies',
                 options: optionsItems,
             },
         ],
@@ -198,11 +198,11 @@ function getTechnicalAreaArray() {
         ],
         [
             {
-                label: 'Prototype &amp; OOP',
+                label: 'Prototype & OOP',
                 options: optionsItems,
             },
             {
-                label: 'Testing(Unit &amp; E2E)',
+                label: 'Testing (Unit & E2E)',
                 options: optionsItems,
             },
             {
