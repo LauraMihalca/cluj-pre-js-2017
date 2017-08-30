@@ -7,6 +7,9 @@ const LoginForm = function () {
               <div class="login-form-header-skin default-font bold">
                 <h3 class="login-form-header-text">Interview Feedback</h3>
               </div>
+              <div class="error-class error-class-skin default-font">
+                    Wrong credentials. Try again!
+              </div>
               <div class="login-form-items default-font">
                   <input class="login-form-items-input login-form-items-input-skin" id="username" type="text" placeholder="Username" name="username">
                   <input class="login-form-items-input login-form-items-input-skin" id="password" type="password" placeholder="Password" name="password" >
@@ -21,6 +24,7 @@ const LoginForm = function () {
 const LoginHeader = function () {
     return `
     <header class="login-header">
+        
         ${LoginForm()}
     </header>
     `;

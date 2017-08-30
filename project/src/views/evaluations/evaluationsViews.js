@@ -13,7 +13,7 @@ const EvaluationsTableRow = function (options = {}) {
         <td>${options.name}</td>
         <td>${options.technology}</td>
         <td>${options.level}</td>
-        <td><a href="">Detalii</a></td>
+        <td><button id="${constructId(options.name)}" data-name="${constructId(options.name)}">Detalii</button></td>
     </tr>
     `;
 };

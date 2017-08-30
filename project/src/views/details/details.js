@@ -1,14 +1,14 @@
-const CandidateDetailsForm = function () {
+const DetaliiCandidateDetailsForm = function () {
     return `
     <section> 
-        <input type="text" id="candidate" placeholder="Candidate" name="candidate">
-        <input type="text" id="interviewer" placeholder="Interviewer" name="interviewer">
-        <input type="date" id="date" name="date">
+        <input type="text" id="candidate" placeholder="Candidate" name="candidate" readonly>
+        <input type="text" id="interviewer" placeholder="Interviewer" name="interviewer" readonly>
+        <input type="date" id="date" name="date" readonly>
     </section>
     `;
 };
 
-const TechnicalLevelHeader = function (options) {
+const DetaliiTechnicalLevelHeader = function (options) {
     const headings = options.headings.map(el => `<th>${el}</th>`);
     return `
     <tr>
@@ -17,11 +17,11 @@ const TechnicalLevelHeader = function (options) {
     `;
 };
 
-const TechnicalLevelPickerHeaders = function (options = {}) {
+const DetaliiTechnicalLevelPickerHeaders = function (options = {}) {
     return options.map(el => `<th>${el}</th>`);
 };
 
-const TechnicalLevelPickerColumns = function (options = {}) {
+const DetaliiTechnicalLevelPickerColumns = function (options = {}) {
     const inputs = options.map((inp) => {
         const partialInputs = inp.inputLevels.map(lev => `<input type="radio" id="${lev}" name="level" title="${lev}" value="${lev}"/>`);
         return `<td>${partialInputs.join('')}</td>`;
@@ -29,7 +29,7 @@ const TechnicalLevelPickerColumns = function (options = {}) {
     return inputs;
 };
 
-const TechnicalLevelPicker = function (options = {}) {
+const DetaliiTechnicalLevelPicker = function (options = {}) {
     const headers = TechnicalLevelPickerHeaders(options.headers);
     const columns = TechnicalLevelPickerColumns(options.columnData);
     return `
@@ -46,7 +46,7 @@ const TechnicalLevelPicker = function (options = {}) {
     </section>
     `;
 };
-const Textarea = function (options = {}) {
+const DetaliiTextarea = function (options = {}) {
     return `
     <section>
         <h2 class="title-skin">${options.title}</h2>
@@ -54,13 +54,13 @@ const Textarea = function (options = {}) {
     </section>`;
 };
 
-const TextareaSection = function (options = {}) {
+const DetaliiTextareaSection = function (options = {}) {
     const finalArr = options.items.map(el => Textarea(el));
     return finalArr.join('');
 };
 
 
-const DropDownSelector = function (options = {}, legend = '') {
+const DetaliiDropDownSelector = function (options = {}, legend = '') {
     const finalArr = options.map((el) => {
         const dropDownOptions = el.options.map(op => `<option value="${op}">${op}</option>`);
         const name = constructIdFieldset(legend, el.label);
@@ -74,13 +74,13 @@ const DropDownSelector = function (options = {}, legend = '') {
     return finalArr.join('');
 };
 
-const Li = function (options = {}) {
+const DetaliiLi = function (options = {}) {
     const result = options.map(el => DropDownSelector(el));
     return `<li>${result.join('')}</li>`;
 };
 
 
-const Fieldset = function (options = {}) {
+const DetaliiFieldset = function (options = {}) {
     const selectArray = options.dropDownOptions.map(el => `<li>${DropDownSelector(el, options.legend)}</li>`);
     return `
     <fieldset>
@@ -91,23 +91,22 @@ const Fieldset = function (options = {}) {
     </fieldset>`;
 };
 
-const TechnicalAreaPicker = function (options = {}) {
+const DetaliiTechnicalAreaPicker = function (options = {}) {
     const fieldsetArray = options.map(el => Fieldset(el));
     return `
     ${fieldsetArray.join('')}    
     `;
 };
 
-const NewEvaluationsPage = function () {
+const DetaliiPage = function () {
     return `
     ${NAV()}
     <div class="new-eval">
         <form id="new_eval_form">
-            ${CandidateDetailsForm()}
-            ${TechnicalLevelPicker(getTechnicalLevelArray())}
-            ${TextareaSection(getTextareaArray())}
-            ${TechnicalAreaPicker(getTechnicalAreaArray())}
-            <input class="new-eval-button new-eval-button-skin default-font" id="submit-button" type="submit" value="SUBMIT"/>
+            ${DetaliiCandidateDetailsForm()}
+            ${DetaliiTechnicalLevelPicker(getTechnicalLevelArray())}
+            ${DetaliiTextareaSection(getTextareaArray())}
+            ${DetaliiTechnicalAreaPicker(getTechnicalAreaArray())}
         </form>
     </div>
     ${Footer()}

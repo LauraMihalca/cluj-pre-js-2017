@@ -3,7 +3,5 @@ function constructId(title) {
 }
 
 function constructIdFieldset(legend, label) {
-    const newLegend = legend.split(/[ |,|]/).join('');
-    const newLabel = label.split(/[ |,|]/).join('');
-    return `${newLegend}${newLabel}`;
+    return `${constructId(legend)}${constructId(label)}`;
 }

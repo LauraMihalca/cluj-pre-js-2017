@@ -72,13 +72,34 @@
 .login-form-button {
     box-shadow: 10px 35px -9px @grey-2;
     line-height: 30px;
-    width: 25%;
-    margin-top: 42%;
-    margin-left: 33%;
+    width: 8%;
+    margin-top: 8%;
+    margin-left: 6%;
+    position: absolute;
 }
 
 .login-form-button-skin {
     background-color: @blue;
     color: @white;
     border: none;
+}
+
+.error-class {
+    width: 100%;
+    padding: 5px 0;
+}
+
+.error-class-skin {
+    text-align: center;
+    background-color: @error-color;
+    display: none;
+    color: @white;
+}
+
+input[type=text] {
+    width: 100%;
+    display: inline-block;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: @grey-2;
 }

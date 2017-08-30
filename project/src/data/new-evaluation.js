@@ -23,16 +23,16 @@ function getTechnicalLevelArray() {
         headers: ['Trainee', 'Junior', 'Middle', 'Senior'],
         columnData: [
             {
-                inputLevels: ['T'],
+                inputLevels: ['Trainee'],
             },
             {
-                inputLevels: ['J1', 'J2', 'J3'],
+                inputLevels: ['Junior1', 'Junior2', 'Junior3'],
             },
             {
-                inputLevels: ['M1', 'M2', 'M3'],
+                inputLevels: ['Middle1', 'Middle2', 'Middle3'],
             },
             {
-                inputLevels: ['S1', 'S2', 'S3'],
+                inputLevels: ['Senior1', 'Senior2', 'Senior3'],
             },
 
         ] };

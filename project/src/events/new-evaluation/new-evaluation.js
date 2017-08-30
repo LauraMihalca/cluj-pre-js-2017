@@ -3,6 +3,7 @@ function redirectToNewEvaluation() {
     mainContent.innerHTML = NewEvaluationsPage();
     setEvent('evaluations', redirectToEvaluation);
     setEvent('logout', logout);
+    setEvent('submit-button', getFormData);
 }
 
 function getSelected(selectId) {
@@ -38,7 +39,7 @@ function getFieldset() {
     return fieldsetArr;
 }
 
-function getFormData() {
+function getFormData(e) {
     inputData = {
         candidate: document.getElementById('candidate').value,
         interviewer: document.getElementById('interviewer').value,
@@ -52,6 +53,9 @@ function getFormData() {
     fieldset = getFieldset();
 
     const newEvaluationForm = new FormModel(inputData, technicalLevel, textarea, fieldset);
-    console.log(newEvaluationForm);
-    return newEvaluationForm;
+    e.preventDefault();
+    const evaluationsArray = JSON.parse(localStorage.getItem('evaluationsArray'));
+    evaluationsArray.push(newEvaluationForm);
+    localStorage.setItem('evaluationsArray', JSON.stringify(evaluationsArray));
+    redirectToEvaluation();
 }
