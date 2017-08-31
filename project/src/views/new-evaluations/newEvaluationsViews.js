@@ -98,18 +98,18 @@ const TechnicalAreaPicker = function (options = {}) {
     `;
 };
 
-const NewEvaluationsPage = function () {
-    return `
-    ${NAV()}
-    <div class="new-eval">
-        <form id="new_eval_form">
-            ${CandidateDetailsForm()}
-            ${TechnicalLevelPicker(getTechnicalLevelArray())}
-            ${TextareaSection(getTextareaArray())}
-            ${TechnicalAreaPicker(getTechnicalAreaArray())}
-            <input class="new-eval-button new-eval-button-skin default-font" id="submit-button" type="submit" value="SUBMIT"/>
-        </form>
-    </div>
-    ${Footer()}
+const NewEvaluationPage = function () {
+    this.markup = `
+        ${NAV()}
+        <div class="new-eval">
+            <form id="new_eval_form">
+                ${CandidateDetailsForm()}
+                ${TechnicalLevelPicker(getTechnicalLevelArray())}
+                ${TextareaSection(getTextareaArray())}
+                ${TechnicalAreaPicker(getTechnicalAreaArray())}
+                <input class="new-eval-button new-eval-button-skin default-font" id="submit-button" type="submit" value="SUBMIT"/>
+            </form>
+        </div>
+        ${Footer()}
     `;
 };

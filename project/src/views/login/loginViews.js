@@ -82,10 +82,10 @@ const LoginSeeResultsSection = function () {
 };
 
 const LoginPage = function () {
-    return `
-    ${LoginHeader()}
-    ${LoginSubmitFeedbackSection()}
-    ${LoginSeeResultsSection()}
-    ${Footer()}
+    this.markup = `
+        ${LoginHeader()}
+        ${LoginSubmitFeedbackSection()}
+        ${LoginSeeResultsSection()}
+        ${Footer()}
     `;
 };

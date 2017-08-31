@@ -1,10 +1,14 @@
-function redirectToNewEvaluation() {
-    const mainContent = document.getElementById('content');
-    mainContent.innerHTML = NewEvaluationsPage();
-    setEvent('evaluations', redirectToEvaluation);
-    setEvent('logout', logout);
-    setEvent('submit-button', getFormData);
-}
+const NewEvaluationEvents = function () {
+    this.initEvents = function (build) {
+        setEvent('evaluations', 'evaluations', build);
+        setEvent('logout', 'login', build);
+        const submitBtn = document.getElementById('submit-button');
+        submitBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            getFormData();
+        });
+    };
+};
 
 function getSelected(selectId) {
     const e = document.getElementById(`${selectId}`);
@@ -53,9 +57,7 @@ function getFormData(e) {
     fieldset = getFieldset();
 
     const newEvaluationForm = new FormModel(inputData, technicalLevel, textarea, fieldset);
-    e.preventDefault();
-    const evaluationsArray = JSON.parse(localStorage.getItem('evaluationsArray'));
+    const evaluationsArray = localStorageGetter('evaluationsArray');
     evaluationsArray.push(newEvaluationForm);
-    localStorage.setItem('evaluationsArray', JSON.stringify(evaluationsArray));
-    redirectToEvaluation();
+    localStorageSetter('evaluationsArray', evaluationsArray);
 }

@@ -39,13 +39,13 @@ const EvaluationsTable = function (options = {}) {
 };
 
 const EvaluationsPage = function (options = {}) {
-    return `
-    ${NAV()}
-    ${EvaluationsTable({
+    this.markup = `
+        ${NAV()}
+        ${EvaluationsTable({
         headings: getHeadings(),
         items: getRows(),
     })}
-    ${Footer()}
+        ${Footer()}
     `;
 };
 

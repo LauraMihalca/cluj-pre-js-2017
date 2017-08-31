@@ -2,7 +2,7 @@ function redirectToDetails() {
     const mainContent = document.getElementById('content');
     mainContent.innerHTML = DetaliiPage();
 
-    const evaluationsArray = JSON.parse(localStorage.getItem('evaluationsArray'));
+    const evaluationsArray = localStorageGetter('evaluationsArray');
     const currentPerson = findCurrentPersonDetails(evaluationsArray, this.dataset.name);
 
     setEvent('new-evaluation', redirectToNewEvaluation);
