@@ -9,10 +9,13 @@
 
     const pagesObject = getDefaultObject();
 
-    const build = function (object) {
+    const redirectToFunction = function (object) {
         const component = ComponentConstructor(object);
         mainContent.innerHTML = component.view.markup;
-        component.initEvents.initEvents(build);
+        component.setEvents.initEvents(redirectToFunction);
+        if (component.setEvents.populate !== undefined) {
+            component.setEvents.populate();
+        }
     };
 
     function getLoggedIn() {
@@ -22,6 +25,6 @@
     if (getLoggedIn()) pagesObject.evaluations = true;
     else pagesObject.login = true;
 
-    build(pagesObject);
+    redirectToFunction(pagesObject);
 }());
 

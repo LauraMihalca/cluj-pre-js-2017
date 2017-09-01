@@ -1,4 +1,4 @@
-const DetaliiCandidateDetailsForm = function () {
+const DetailsCandidateDetailsForm = function (options) {
     return `
     <section> 
         <input type="text" id="candidate" placeholder="Candidate" name="candidate" readonly>
@@ -8,7 +8,7 @@ const DetaliiCandidateDetailsForm = function () {
     `;
 };
 
-const DetaliiTechnicalLevelHeader = function (options) {
+const DetailsTechnicalLevelHeader = function (options) {
     const headings = options.headings.map(el => `<th>${el}</th>`);
     return `
     <tr>
@@ -17,19 +17,19 @@ const DetaliiTechnicalLevelHeader = function (options) {
     `;
 };
 
-const DetaliiTechnicalLevelPickerHeaders = function (options = {}) {
+const DetailsTechnicalLevelPickerHeaders = function (options = {}) {
     return options.map(el => `<th>${el}</th>`);
 };
 
-const DetaliiTechnicalLevelPickerColumns = function (options = {}) {
+const DetailsTechnicalLevelPickerColumns = function (options = {}) {
     const inputs = options.map((inp) => {
-        const partialInputs = inp.inputLevels.map(lev => `<input type="radio" id="${lev}" name="level" title="${lev}" value="${lev}"/>`);
+        const partialInputs = inp.inputLevels.map(lev => `<input type="radio" id="${lev}" name="level" title="${lev}">`);
         return `<td>${partialInputs.join('')}</td>`;
     });
     return inputs;
 };
 
-const DetaliiTechnicalLevelPicker = function (options = {}) {
+const DetailsTechnicalLevelPicker = function (options = {}) {
     const headers = TechnicalLevelPickerHeaders(options.headers);
     const columns = TechnicalLevelPickerColumns(options.columnData);
     return `
@@ -46,21 +46,21 @@ const DetaliiTechnicalLevelPicker = function (options = {}) {
     </section>
     `;
 };
-const DetaliiTextarea = function (options = {}) {
+const DetailsTextarea = function (options = {}) {
     return `
     <section>
         <h2 class="title-skin">${options.title}</h2>
-        <textarea rows="6" id="${constructId(options.title)}" placeholder="${options.placeholder}"></textarea>
+        <textarea rows="6" id="${constructId(options.title)}" placeholder="${options.placeholder}" readonly></textarea>
     </section>`;
 };
 
-const DetaliiTextareaSection = function (options = {}) {
+const DetailsTextareaSection = function (options = {}) {
     const finalArr = options.items.map(el => Textarea(el));
     return finalArr.join('');
 };
 
 
-const DetaliiDropDownSelector = function (options = {}, legend = '') {
+const DetailsDropDownSelector = function (options = {}, legend = '') {
     const finalArr = options.map((el) => {
         const dropDownOptions = el.options.map(op => `<option value="${op}">${op}</option>`);
         const name = constructIdFieldset(legend, el.label);
@@ -74,13 +74,13 @@ const DetaliiDropDownSelector = function (options = {}, legend = '') {
     return finalArr.join('');
 };
 
-const DetaliiLi = function (options = {}) {
+const DetailsLi = function (options = {}) {
     const result = options.map(el => DropDownSelector(el));
     return `<li>${result.join('')}</li>`;
 };
 
 
-const DetaliiFieldset = function (options = {}) {
+const DetailsFieldset = function (options = {}) {
     const selectArray = options.dropDownOptions.map(el => `<li>${DropDownSelector(el, options.legend)}</li>`);
     return `
     <fieldset>
@@ -91,22 +91,22 @@ const DetaliiFieldset = function (options = {}) {
     </fieldset>`;
 };
 
-const DetaliiTechnicalAreaPicker = function (options = {}) {
+const DetailsTechnicalAreaPicker = function (options = {}) {
     const fieldsetArray = options.map(el => Fieldset(el));
     return `
     ${fieldsetArray.join('')}    
     `;
 };
 
-const DetaliiPage = function () {
-    return `
+const DetailsPage = function () {
+    this.markup = `
     ${NAV()}
     <div class="new-eval">
         <form id="new_eval_form">
-            ${DetaliiCandidateDetailsForm()}
-            ${DetaliiTechnicalLevelPicker(getTechnicalLevelArray())}
-            ${DetaliiTextareaSection(getTextareaArray())}
-            ${DetaliiTechnicalAreaPicker(getTechnicalAreaArray())}
+            ${DetailsCandidateDetailsForm()}
+            ${DetailsTechnicalLevelPicker(getTechnicalLevelArray())}
+            ${DetailsTextareaSection(getTextareaArray())}
+            ${DetailsTechnicalAreaPicker(getTechnicalAreaArray())}
         </form>
     </div>
     ${Footer()}

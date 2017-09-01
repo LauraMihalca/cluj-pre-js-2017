@@ -1,7 +1,7 @@
 const NewEvaluationEvents = function () {
-    this.initEvents = function (build) {
-        setEvent('evaluations', 'evaluations', build);
-        setEvent('logout', 'login', build);
+    this.initEvents = function (redirectToFunction) {
+        setEvent('evaluations', 'evaluations', redirectToFunction);
+        setEvent('logout', 'login', redirectToFunction);
         const submitBtn = document.getElementById('submit-button');
         submitBtn.addEventListener('click', (e) => {
             e.preventDefault();
