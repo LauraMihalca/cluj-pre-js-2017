@@ -1,6 +1,6 @@
-
-const LoginForm = function () {
-    return `
+(function () {
+    const LoginForm = function () {
+        return `
     <div class="grid">
     <div class="login-form login-common-skin">
           <form>
@@ -19,19 +19,19 @@ const LoginForm = function () {
         </div>
     </div>
     `;
-};
+    };
 
-const LoginHeader = function () {
-    return `
+    const LoginHeader = function () {
+        return `
     <header class="login-header">
         
         ${LoginForm()}
     </header>
     `;
-};
+    };
 
-const LoginSubmitFeedbackSection = function () {
-    return `
+    const LoginSubmitFeedbackSection = function () {
+        return `
     <section>
         <div class="grid login-section-1 login-common-skin">
             <div class="col-1">
@@ -53,10 +53,10 @@ const LoginSubmitFeedbackSection = function () {
         </div>
     </section>
     `;
-};
+    };
 
-const LoginSeeResultsSection = function () {
-    return `
+    const LoginSeeResultsSection = function () {
+        return `
     <section>
         <div class="grid login-section-2">
 
@@ -79,13 +79,18 @@ const LoginSeeResultsSection = function () {
         </div>
     </section>
     `;
-};
+    };
 
-const LoginPage = function () {
-    this.markup = `
+    const LoginPage = function () {
+        this.markup = `
         ${LoginHeader()}
         ${LoginSubmitFeedbackSection()}
         ${LoginSeeResultsSection()}
-        ${Footer()}
+        ${feedbackApp.common.view.footer}
     `;
-};
+    };
+
+    feedbackApp.login.view = {
+        setup: new LoginPage(),
+    };
+}());

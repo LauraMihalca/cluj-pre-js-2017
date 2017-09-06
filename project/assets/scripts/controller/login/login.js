@@ -29,4 +29,9 @@
             redirectToFunction(pagesObject);
         }
     };
+
+    feedbackApp.login.events = {
+        setup: new LoginEvents(),
+    };
 }());
+

@@ -18,19 +18,17 @@ const getComponent = function (page) {
 
 const render = function (component) {
     const mainContent = document.getElementById('content');
-    mainContent.innerHTML = component.view.markup;
+    mainContent.innerHTML = component.markup;
 };
 
 const setupEvents = function (component, redirectToFunction) {
-    component.events.init(redirectToFunction);
+    component.init(redirectToFunction);
 };
 
 const destroy = function (component) {
-    component.events.destroy();
+    component.destroy();
 };
 
 const populate = function (component, dataName) {
-    component.events.populate(dataName);
+    component.populate(dataName);
 };
-
-

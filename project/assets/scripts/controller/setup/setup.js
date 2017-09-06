@@ -1,52 +1,45 @@
-var feedbackApp = {};
+const feedbackApp = {};
 
 (function () {
+    feedbackApp.data = {};
+    feedbackApp.common = {};
     feedbackApp.login = {
         init: () => {
-            const component = getComponent('login');
-            render(component);
-            setupEvents(component, feedbackApp.redirectToFunction);
+            render(feedbackApp.login.view.setup);
+            setupEvents(feedbackApp.login.events.setup, feedbackApp.redirectToFunction);
         },
         destroy: () => {
-            const component = getComponent('login');
-            destroy(component);
+            destroy(feedbackApp.login.events.setup);
         },
     };
     feedbackApp.evaluations = {
         init: () => {
-            const component = getComponent('evaluations');
-            render(component);
-            setupEvents(component, feedbackApp.redirectToFunction);
+            render(feedbackApp.evaluations.view.setup);
+            setupEvents(feedbackApp.evaluations.events.setup, feedbackApp.redirectToFunction);
         },
         destroy: () => {
-            const component = getComponent('evaluations');
-            destroy(component, feedbackApp.redirectToFunction);
+            destroy(feedbackApp.evaluations.events.setup);
         },
     };
     feedbackApp.newEvaluation = {
         init: () => {
-            const component = getComponent('newEvaluation');
-            render(component);
-            setupEvents(component, feedbackApp.redirectToFunction);
+            render(feedbackApp.newEvaluation.view.setup);
+            setupEvents(feedbackApp.newEvaluation.events.setup, feedbackApp.redirectToFunction);
         },
         destroy: () => {
-            const component = getComponent('newEvaluation');
-            destroy(component);
+            destroy(feedbackApp.newEvaluation.events.setup);
         },
     };
     feedbackApp.details = {
         init: () => {
-            const component = getComponent('details');
-            render(component);
-            setupEvents(component, feedbackApp.redirectToFunction);
+            render(feedbackApp.details.view.setup);
+            setupEvents(feedbackApp.details.events.setup, feedbackApp.redirectToFunction);
         },
         populate: (dataName) => {
-            const component = getComponent('details');
-            populate(component, dataName);
+            populate(feedbackApp.details.events.setup, dataName);
         },
         destroy: () => {
-            const component = getComponent('details');
-            destroy(component);
+            destroy(feedbackApp.details.events.setup);
         },
     };
 }());

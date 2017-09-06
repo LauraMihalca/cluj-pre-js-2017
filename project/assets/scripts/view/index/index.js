@@ -6,7 +6,6 @@
     }
 
     let currentPage = '';
-
     feedbackApp.redirectToFunction = function (page, dataName) {
         if (currentPage !== '') {
             feedbackApp[currentPage].destroy();
@@ -16,6 +15,7 @@
         if (dataName !== undefined) {
             feedbackApp[page].populate(dataName);
         }
+        sessionStorage.setItem('currentPage', page);
     };
 
     function isLoggedIn() {
