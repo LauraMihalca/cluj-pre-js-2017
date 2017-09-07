@@ -32,20 +32,24 @@
     }
 
     function getFieldset() {
-        const fieldsetArr = feedbackApp.data.newEvaluation.technicalAreaItems().map((el) => {
-            const obj = {};
-            const objKey = constructId(el.legend);
-            obj[objKey] = {};
-            const dropDownObj = {};
-            el.dropDownOptions.forEach((op) => {
-                op.forEach((i) => {
-                    const dropDownKey = constructIdFieldset(el.legend, i.label);
-                    dropDownObj[dropDownKey] = getSelected(constructIdFieldset(el.legend, i.label));
-                    obj[objKey] = dropDownObj;
+        let fieldsetArr;
+        feedbackApp.data.newEvaluation.technicalAreaItems()
+            .then((data) => {
+                fieldsetArr = data.map((el) => {
+                    const obj = {};
+                    const objKey = constructId(el.legend);
+                    obj[objKey] = {};
+                    const dropDownObj = {};
+                    el.dropDownOptions.forEach((op) => {
+                        op.forEach((i) => {
+                            const dropDownKey = constructIdFieldset(el.legend, i.label);
+                            dropDownObj[dropDownKey] = getSelected(constructIdFieldset(el.legend, i.label));
+                            obj[objKey] = dropDownObj;
+                        });
+                    });
+                    return obj;
                 });
             });
-            return obj;
-        });
         return fieldsetArr;
     }
 

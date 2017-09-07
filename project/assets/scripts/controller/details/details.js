@@ -10,14 +10,13 @@
             removeEvents('evaluations', addEvent.bind(null, 'newEvaluation', redirectToFunction));
             removeEvents('logout', addEvent.bind(null, 'login', redirectToFunction));
         };
-        this.populate = function (currentName) {
-            const currentCandidateData = getCurrentCandidateData(currentName);
-            console.log(currentName);
-            document.getElementById('candidate').value = currentCandidateData[0].inputData.candidate;
-            document.getElementById('interviewer').value = currentCandidateData[0].inputData.interviewer;
-            document.getElementById('date').value = currentCandidateData[0].inputData.date;
+        this.populate = function (currentId) {
+            const currentCandidateData = getCurrentCandidateData(currentId);
+            document.getElementById('candidate').value = currentCandidateData.inputData.candidate;
+            document.getElementById('interviewer').value = currentCandidateData.inputData.interviewer;
+            document.getElementById('date').value = currentCandidateData.inputData.date;
 
-            document.getElementById(currentCandidateData[0].technicalLevel).checked = true;
+            document.getElementById(currentCandidateData.technicalLevel).checked = true;
             document.getElementsByName('level').forEach((el) => {
                 const elem = el;
                 if (!elem.checked) {
@@ -25,12 +24,12 @@
                 }
             });
 
-            currentCandidateData[0].textarea.forEach((el) => {
+            currentCandidateData.textarea.forEach((el) => {
                 const key = Object.keys(el)[0];
                 disableElement(key, el);
             });
 
-            currentCandidateData[0].fieldset.forEach((el) => {
+            currentCandidateData.fieldset.forEach((el) => {
                 const key = Object.keys(el);
                 const insideKeys = Object.keys(el[key]);
                 insideKeys.forEach((e) => {
@@ -41,11 +40,9 @@
     }
 ;
 
-    const getCurrentCandidateData = function (currentName) {
+    const getCurrentCandidateData = function (currentId) {
         const evaluationsArray = localStorageGetter('evaluationsArray');
-        const finalArr = evaluationsArray.filter(el =>
-            constructId(el.inputData.candidate) === currentName);
-        return finalArr;
+        return evaluationsArray[currentId];
     };
 
     feedbackApp.details.events = {

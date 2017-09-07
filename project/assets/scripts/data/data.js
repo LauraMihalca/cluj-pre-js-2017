@@ -2,7 +2,7 @@ feedbackApp.data.evaluations = {};
 feedbackApp.data.newEvaluation = {};
 (function () {
     feedbackApp.data.evaluations = {
-        headings: () => ['Nume', 'Tehnologie', 'Nivel', ''],
+        headings: () => ['Name', 'Technology', 'Level', ''],
         rows: () => {
             const evaluationsArray = localStorageGetter('evaluationsArray');
             if (evaluationsArray !== null) {
@@ -41,7 +41,7 @@ feedbackApp.data.newEvaluation = {};
             items: [
                 {
                     title: 'Should the candidate be hired?',
-                    placeholder: 'The type of project that is suitable for the candidate Is guidance required for the candidate',
+                    placeholder: 'The type of project that is suitable for the candidate. Is guidance required for the candidate ?',
                 },
                 {
                     title: 'General Impression',
@@ -49,7 +49,7 @@ feedbackApp.data.newEvaluation = {};
                 },
                 {
                     title: 'Workflow, Leadership & Soft Skills',
-                    placeholder: 'Describe the environment in which the candidate works. Describe any guidance or management experience',
+                    placeholder: 'Describe the environment in which the candidate works. Describe any guidance or management experience.',
                 },
             ],
         }),
@@ -62,7 +62,6 @@ feedbackApp.data.newEvaluation = {};
                         if (xhr.status < 400) {
                             try {
                                 const response = JSON.parse(xhr.responseText).items;
-                                console.log(response);
                                 resolve(response);
                             } catch (e) {
                                 reject('Cannot get response');
