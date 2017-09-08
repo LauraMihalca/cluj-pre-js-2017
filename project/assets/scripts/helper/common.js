@@ -12,10 +12,6 @@ function disableElement(key, el) {
     element.disabled = true;
 }
 
-const getComponent = function (page) {
-    return ComponentConstructor(page);
-};
-
 const render = function (component) {
     const mainContent = document.getElementById('content');
     mainContent.innerHTML = component.markup;

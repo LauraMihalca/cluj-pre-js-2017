@@ -6,7 +6,7 @@
     }
 
     let currentPage = '';
-    feedbackApp.redirectToFunction = function (page, dataName) {
+    feedbackApp.redirectTo = function (page, dataName) {
         if (currentPage !== '') {
             feedbackApp[currentPage].destroy();
         }
@@ -32,6 +32,6 @@
     }
 
 
-    feedbackApp.redirectToFunction(pageToGo);
+    feedbackApp.redirectTo(pageToGo);
 }());
 

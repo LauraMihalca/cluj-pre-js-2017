@@ -31,29 +31,26 @@
         return textareaArray;
     }
 
-    function getFieldset() {
-        let fieldsetArr;
-        feedbackApp.data.newEvaluation.technicalAreaItems()
-            .then((data) => {
-                fieldsetArr = data.map((el) => {
-                    const obj = {};
-                    const objKey = constructId(el.legend);
-                    obj[objKey] = {};
-                    const dropDownObj = {};
-                    el.dropDownOptions.forEach((op) => {
-                        op.forEach((i) => {
-                            const dropDownKey = constructIdFieldset(el.legend, i.label);
-                            dropDownObj[dropDownKey] = getSelected(constructIdFieldset(el.legend, i.label));
-                            obj[objKey] = dropDownObj;
-                        });
-                    });
-                    return obj;
+    function getFieldset(data) {
+        const fieldsetArr = data.map((el) => {
+            const obj = {};
+            const objKey = constructId(el.legend);
+            obj[objKey] = {};
+            const dropDownObj = {};
+            el.dropDownOptions.forEach((op) => {
+                op.forEach((i) => {
+                    const dropDownKey = constructIdFieldset(el.legend, i.label);
+                    dropDownObj[dropDownKey] = getSelected(constructIdFieldset(el.legend, i.label));
+                    obj[objKey] = dropDownObj;
                 });
             });
+            return obj;
+        });
         return fieldsetArr;
     }
 
-    function getFormData() {
+
+    function prepareForm(data) {
         inputData = {
             candidate: document.getElementById('candidate').value,
             interviewer: document.getElementById('interviewer').value,
@@ -64,12 +61,15 @@
 
         textarea = getTextarea();
 
-        fieldset = getFieldset();
+        return new FormModel(inputData, technicalLevel, textarea, getFieldset(data));
+    }
 
-        const newEvaluationForm = new FormModel(inputData, technicalLevel, textarea, fieldset);
-        const evaluationsArray = localStorageGetter('evaluationsArray');
-        evaluationsArray.push(newEvaluationForm);
-        localStorageSetter('evaluationsArray', evaluationsArray);
+    function getFormData() {
+        feedbackApp.data.newEvaluation.technicalAreaItems().then((data) => {
+            const evaluationsArray = localStorageGetter('evaluationsArray');
+            evaluationsArray.push(prepareForm(data));
+            localStorageSetter('evaluationsArray', evaluationsArray);
+        });
     }
 
     feedbackApp.newEvaluation.events = {
