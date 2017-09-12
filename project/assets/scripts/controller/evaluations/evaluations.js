@@ -7,9 +7,7 @@
             const allButtonsObject = document.getElementsByTagName('button');
             const allButtonsArray = Array.prototype.slice.call(allButtonsObject);
             allButtonsArray.forEach((element) => {
-                const id = element.getAttribute('id');
-                const detailsBtn = document.getElementById(id);
-                detailsBtn.addEventListener('click', redirectToDetails.bind(null, redirectToFunction, detailsBtn.dataset.name));
+                element.addEventListener('click', redirectToDetails.bind(null, redirectToFunction, element.dataset.name));
             });
         };
         this.destroy = function (redirectToFunction) {

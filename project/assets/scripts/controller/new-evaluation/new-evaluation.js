@@ -32,7 +32,7 @@
     }
 
     function getFieldset(data) {
-        const fieldsetArr = data.map((el) => {
+        return data.reduce((el) => {
             const obj = {};
             const objKey = constructId(el.legend);
             obj[objKey] = {};
@@ -45,8 +45,7 @@
                 });
             });
             return obj;
-        });
-        return fieldsetArr;
+        }, []);
     }
 
 

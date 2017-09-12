@@ -6,7 +6,7 @@ const feedbackApp = {};
     feedbackApp.login = {
         init: () => {
             render(feedbackApp.login.view.setup);
-            setupEvents(feedbackApp.login.events.setup, feedbackApp.redirectToFunction);
+            setupEvents(feedbackApp.login.events.setup, feedbackApp.redirectTo);
         },
         destroy: () => {
             destroy(feedbackApp.login.events.setup);
@@ -15,7 +15,7 @@ const feedbackApp = {};
     feedbackApp.evaluations = {
         init: () => {
             render(feedbackApp.evaluations.view.setup);
-            setupEvents(feedbackApp.evaluations.events.setup, feedbackApp.redirectToFunction);
+            setupEvents(feedbackApp.evaluations.events.setup, feedbackApp.redirectTo);
         },
         destroy: () => {
             destroy(feedbackApp.evaluations.events.setup);
@@ -24,7 +24,7 @@ const feedbackApp = {};
     feedbackApp.newEvaluation = {
         init: () => {
             render(feedbackApp.newEvaluation.view.setup);
-            setupEvents(feedbackApp.newEvaluation.events.setup, feedbackApp.redirectToFunction);
+            setupEvents(feedbackApp.newEvaluation.events.setup, feedbackApp.redirectTo);
         },
         destroy: () => {
             destroy(feedbackApp.newEvaluation.events.setup);
@@ -33,7 +33,7 @@ const feedbackApp = {};
     feedbackApp.details = {
         init: () => {
             render(feedbackApp.details.view.setup);
-            setupEvents(feedbackApp.details.events.setup, feedbackApp.redirectToFunction);
+            setupEvents(feedbackApp.details.events.setup, feedbackApp.redirectTo);
         },
         populate: (dataName) => {
             populate(feedbackApp.details.events.setup, dataName);
