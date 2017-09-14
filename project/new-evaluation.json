@@ -1,244 +1,249 @@
 { "items":  [
     {
         "legend": "OOP, Design Patterns",
+        "options": ["0", "1", "2", "3"],        
         "dropDownOptions": [
             [
                 {
-                    "label": "Classes",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Classes"
                 },
                 {
-                    "label": "Exception Handling",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Exception Handling"
+                    
                 },
                 {
-                    "label": "Version Control",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Version Control"
+                    
                 }
             ],
             [
                 {
-                    "label": "Access Modifiers",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Access Modifiers"
+                    
                 },
                 {
-                    "label": "Design Patterns",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Design Patterns"
+                    
                 },
                 {
-                    "label": "Issue Tracking",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Issue Tracking"
+                    
                 }
             ],
             [
                 {
-                    "label": "Polymorphism",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Polymorphism"
+                    
                 },
                 {
-                    "label": "RegEx",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "RegEx"
+                    
                 }
             ]
         ]
     },
     {
         "legend": "HTTP",
+        "options": ["0", "1", "2", "3"],
         "dropDownOptions": [
             [
                 {
-                    "label": "Protocol",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Protocol"
+                    
                 },
                 {
-                    "label": "Response Codes",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Response Codes"
+                    
                 },
                 {
-                    "label": "Rest",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Rest"
+                    
                 }
             ],
             [
                 {
-                    "label": "Headers",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Headers"
+                    
                 },
                 {
-                    "label": "Request Methods",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Request Methods"
+                    
                 },
                 {
-                    "label": "Sessions & Cookies",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Sessions & Cookies"
+                    
                 }
             ]
         ]
     },
     {
         "legend": "HTML",
+        "options": ["0", "1", "2", "3"],
         "dropDownOptions": [
             [
                 {
-                    "label": "Doctype",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Doctype"
+                    
                 },
                 {
-                    "label": "Tags",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Tags"
+                    
                 },
                 {
-                    "label": "Basic SEO",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Basic SEO"
+                    
                 }
             ],
             [
                 {
-                    "label": "Syntax Rules",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Syntax Rules"
+                    
                 },
                 {
-                    "label": "Attributes",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Attributes"
+                    
                 }
             ]
         ]
     },
     {
         "legend": "CSS",
+        "options": ["0", "1", "2", "3"],
         "dropDownOptions":  [
             [
                 {
-                    "label": "Usage",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Usage"
+                    
                 },
                 {
-                    "label": "Box modeling",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Box modeling"
+                    
                 },
                 {
-                    "label": "CSS 3.0",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "CSS 3.0"
+                    
                 }
             ],
             [
                 {
-                    "label": "Selectors",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Selectors"
+                    
                 },
                 {
-                    "label": "Styling",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Styling"
+                    
                 },
                 {
-                    "label": "Dynamic Stylesheets",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Dynamic Stylesheets"
+                    
                 }
             ]
         ]
     },
     {
         "legend": "Javascript",
+        "options": ["0", "1", "2", "3"],
         "dropDownOptions": [
             [
                 {
-                    "label": "Data Types and Variables",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Data Types and Variables"
+                    
                 },
                 {
-                    "label": "Object manipulation",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Object manipulation"
+                    
                 },
                 {
-                    "label": "DOM manipulations",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "DOM manipulations"
+                    
                 }
             ],
             [
                 {
-                    "label": "Functions",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Functions"
+                    
                 },
                 {
-                    "label": "Templating",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Templating"
+                    
                 },
                 {
-                    "label": "Event Handling",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Event Handling"
+                    
                 }
             ],
             [
                 {
-                    "label": "Prototype & OOP",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Prototype & OOP"
+                    
                 },
                 {
-                    "label": "Testing (Unit & E2E)",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Testing (Unit & E2E)"
+                    
                 },
                 {
-                    "label": "AJAX",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "AJAX"
+                    
                 }
             ],
             [
                 {
-                    "label": "Debugging",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Debugging"
+                    
                 },
                 {
-                    "label": "Websockets",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Websockets"
+                    
                 },
                 {
-                    "label": "Tooling",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Tooling"
+                    
                 }
             ],
             [
                 {
-                    "label": "Libraries",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Libraries"
+                    
                 },
                 {
-                    "label": "Promises",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Promises"
+                    
                 },
                 {
-                    "label": "Browser Engines",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Browser Engines"
+                    
                 }
             ],
             [
                 {
-                    "label": "Frameworks",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Frameworks"
+                    
                 }
             ]
         ]
     },
     {
         "legend": "NodeJS",
+        "options": ["0", "1", "2", "3"],
         "dropDownOptions": [
             [
                 {
-                    "label": "Backend Frameworks",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Backend Frameworks"
+                    
                 },
                 {
-                    "label": "Templating",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Templating"
+                    
                 },
                 {
-                    "label": "DOM manipulation",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "DOM manipulation"
+                    
                 }
             ],
             [
                 {
-                    "label": "Unit Testing",
-                    "options": ["0", "1", "2", "3"]
+                    "label": "Unit Testing"
+                    
                 }
             ]
         ]

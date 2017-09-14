@@ -61,9 +61,9 @@
     };
 
 
-    const DropDownSelector = function (options = {}, legend = '') {
+    const DropDownSelector = function (options = {}, legend = '', opts = []) {
+        const dropDownOptions = opts.map(op => `<option value="${op}">${op}</option>`);
         const finalArr = options.map((el) => {
-            const dropDownOptions = el.options.map(op => `<option value="${op}">${op}</option>`);
             const name = constructIdFieldset(legend, el.label);
             return `
         <label for="${name}" class="default-label default-label-skin default-font-label">${el.label}</label>
@@ -75,14 +75,8 @@
         return finalArr.join('');
     };
 
-    const Li = function (options = {}) {
-        const result = options.map(el => DropDownSelector(el));
-        return `<li>${result.join('')}</li>`;
-    };
-
-
     const Fieldset = function (options = {}) {
-        const selectArray = options.dropDownOptions.map(el => `<li>${DropDownSelector(el, options.legend)}</li>`);
+        const selectArray = options.dropDownOptions.map(el => `<li>${DropDownSelector(el, options.legend, options.options)}</li>`);
         return `
     <fieldset>
         <legend>${options.legend}</legend>
