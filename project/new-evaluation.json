@@ -1,0 +1,252 @@
+{ "items":  [
+    {
+        "legend": "OOP, Design Patterns",
+        "options": ["0", "1", "2", "3"],        
+        "dropDownOptions": [
+            [
+                {
+                    "label": "Classes"
+                },
+                {
+                    "label": "Exception Handling"
+                    
+                },
+                {
+                    "label": "Version Control"
+                    
+                }
+            ],
+            [
+                {
+                    "label": "Access Modifiers"
+                    
+                },
+                {
+                    "label": "Design Patterns"
+                    
+                },
+                {
+                    "label": "Issue Tracking"
+                    
+                }
+            ],
+            [
+                {
+                    "label": "Polymorphism"
+                    
+                },
+                {
+                    "label": "RegEx"
+                    
+                }
+            ]
+        ]
+    },
+    {
+        "legend": "HTTP",
+        "options": ["0", "1", "2", "3"],
+        "dropDownOptions": [
+            [
+                {
+                    "label": "Protocol"
+                    
+                },
+                {
+                    "label": "Response Codes"
+                    
+                },
+                {
+                    "label": "Rest"
+                    
+                }
+            ],
+            [
+                {
+                    "label": "Headers"
+                    
+                },
+                {
+                    "label": "Request Methods"
+                    
+                },
+                {
+                    "label": "Sessions & Cookies"
+                    
+                }
+            ]
+        ]
+    },
+    {
+        "legend": "HTML",
+        "options": ["0", "1", "2", "3"],
+        "dropDownOptions": [
+            [
+                {
+                    "label": "Doctype"
+                    
+                },
+                {
+                    "label": "Tags"
+                    
+                },
+                {
+                    "label": "Basic SEO"
+                    
+                }
+            ],
+            [
+                {
+                    "label": "Syntax Rules"
+                    
+                },
+                {
+                    "label": "Attributes"
+                    
+                }
+            ]
+        ]
+    },
+    {
+        "legend": "CSS",
+        "options": ["0", "1", "2", "3"],
+        "dropDownOptions":  [
+            [
+                {
+                    "label": "Usage"
+                    
+                },
+                {
+                    "label": "Box modeling"
+                    
+                },
+                {
+                    "label": "CSS 3.0"
+                    
+                }
+            ],
+            [
+                {
+                    "label": "Selectors"
+                    
+                },
+                {
+                    "label": "Styling"
+                    
+                },
+                {
+                    "label": "Dynamic Stylesheets"
+                    
+                }
+            ]
+        ]
+    },
+    {
+        "legend": "Javascript",
+        "options": ["0", "1", "2", "3"],
+        "dropDownOptions": [
+            [
+                {
+                    "label": "Data Types and Variables"
+                    
+                },
+                {
+                    "label": "Object manipulation"
+                    
+                },
+                {
+                    "label": "DOM manipulations"
+                    
+                }
+            ],
+            [
+                {
+                    "label": "Functions"
+                    
+                },
+                {
+                    "label": "Templating"
+                    
+                },
+                {
+                    "label": "Event Handling"
+                    
+                }
+            ],
+            [
+                {
+                    "label": "Prototype & OOP"
+                    
+                },
+                {
+                    "label": "Testing (Unit & E2E)"
+                    
+                },
+                {
+                    "label": "AJAX"
+                    
+                }
+            ],
+            [
+                {
+                    "label": "Debugging"
+                    
+                },
+                {
+                    "label": "Websockets"
+                    
+                },
+                {
+                    "label": "Tooling"
+                    
+                }
+            ],
+            [
+                {
+                    "label": "Libraries"
+                    
+                },
+                {
+                    "label": "Promises"
+                    
+                },
+                {
+                    "label": "Browser Engines"
+                    
+                }
+            ],
+            [
+                {
+                    "label": "Frameworks"
+                    
+                }
+            ]
+        ]
+    },
+    {
+        "legend": "NodeJS",
+        "options": ["0", "1", "2", "3"],
+        "dropDownOptions": [
+            [
+                {
+                    "label": "Backend Frameworks"
+                    
+                },
+                {
+                    "label": "Templating"
+                    
+                },
+                {
+                    "label": "DOM manipulation"
+                    
+                }
+            ],
+            [
+                {
+                    "label": "Unit Testing"
+                    
+                }
+            ]
+        ]
+    }
+]
+}

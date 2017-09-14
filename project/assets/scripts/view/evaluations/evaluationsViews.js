@@ -1,32 +1,33 @@
-const EvaluationsTableHeader = function (options) {
-    const headings = options.headings.map(el => `<th>${el}</th>`);
-    return `
+(function () {
+    const EvaluationsTableHeader = function (options) {
+        const headings = options.headings.map(el => `<th>${el}</th>`);
+        return `
     <tr>
        ${headings.join('')}
     </tr>
     `;
-};
+    };
 
-const EvaluationsTableRow = function (options = {}) {
-    return `
+    const EvaluationsTableRow = function (options = {}, index) {
+        return `
     <tr>
         <td>${options.name}</td>
         <td>${options.technology}</td>
         <td>${options.level}</td>
-        <td><label for="${constructId(options.name)}">Detalii</label><button id="${constructId(options.name)}" class="details-button" data-name="${constructId(options.name)}">+</button></td>
+        <td><label for="${index}">Details</label><button id="${index}" class="details-button" data-name="${index}">+</button></td>
     </tr>
     `;
-};
+    };
 
-const EvaluationsTableBody = function (options = {}) {
-    const rowsElements = options.items.map(rowObj => EvaluationsTableRow(rowObj));
-    return `
+    const EvaluationsTableBody = function (options = {}) {
+        const rowsElements = options.items.map((rowObj, index) => EvaluationsTableRow(rowObj, index));
+        return `
     ${rowsElements.join('')}
     `;
-};
+    };
 
-const EvaluationsTable = function (options = {}) {
-    return `
+    const EvaluationsTable = function (options = {}) {
+        return `
     <div class="eval-section">
         <section>
             <table class="eval-section-table">
@@ -36,16 +37,21 @@ const EvaluationsTable = function (options = {}) {
         </section>
     </div>    
     `;
-};
+    };
 
-const EvaluationsPage = function (options = {}) {
-    this.markup = `
-        ${NAV()}
+    const EvaluationsPage = function (options = {}) {
+        this.markup = `
+        ${feedbackApp.common.view.nav}
         ${EvaluationsTable({
-        headings: getHeadings(),
-        items: getRows(),
+        headings: feedbackApp.data.evaluations.headings(),
+        items: feedbackApp.data.evaluations.rows(),
     })}
-        ${Footer()}
+        ${feedbackApp.common.view.footer}
     `;
-};
+    };
+
+    feedbackApp.evaluations.view = {
+        setup: new EvaluationsPage(),
+    };
+}());
 
